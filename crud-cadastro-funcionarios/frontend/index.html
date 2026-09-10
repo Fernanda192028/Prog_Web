@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRUD de Funcionários</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>CRUD de Funcionários</h1>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2 id="form-titulo">Cadastrar funcionário</h2>
+      <form id="form-funcionario">
+        <input type="hidden" id="funcionario-id" />
+
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" placeholder="Digite o nome do funcionário" required />
+
+        <label for="cargo">Cargo</label>
+        <input type="text" id="cargo" placeholder="Digite o cargo" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Digite o email" required />
+
+        <div class="linha-dupla">
+          <div>
+            <label for="salario">Salário</label>
+            <input type="number" id="salario" min="0" step="0.01" placeholder="0.00" required />
+          </div>
+          <div>
+            <label for="dataAdmissao">Data de admissão</label>
+            <input type="date" id="dataAdmissao" required />
+          </div>
+        </div>
+
+        <div class="acoes-form">
+          <button type="submit" id="btn-salvar" class="btn-azul">Salvar funcionário</button>
+          <button type="button" id="btn-cancelar" class="btn-cinza hidden">Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="cabecalho-lista">
+        <div>
+          <h2>Funcionários</h2>
+          <p id="total-funcionarios">0 funcionário(s) cadastrado(s)</p>
+        </div>
+        <button id="btn-atualizar" class="btn-escuro">Atualizar</button>
+      </div>
+
+      <p id="loading" class="hidden">Carregando...</p>
+      <p id="lista-vazia" class="hidden">Nenhum funcionário cadastrado ainda.</p>
+
+      <div id="funcionarios-container" class="grid-funcionarios"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CRUD MongoDB - Node.js</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
