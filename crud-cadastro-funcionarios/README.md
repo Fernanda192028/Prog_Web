@@ -1,64 +1,39 @@
-# CRUD de Funcionários
+# 👥 CRUD de Funcionários
 
-Projeto no mesmo padrão do CRUD de Produtos: Node.js + Express + MongoDB no backend, HTML/CSS/JS puro no frontend.
+Um sistema web completo para o gerenciamento de funcionários, englobando as operações fundamentais de Criação, Leitura, Atualização e Exclusão (CRUD). O projeto consome uma API RESTful construída em Node.js e apresenta os dados em uma interface limpa e responsiva.
 
-## Estrutura
+## 🚀 Funcionalidades
 
-```
+- **Cadastro:** Inserção de novos funcionários com validação de campos obrigatórios.
+- **Listagem:** Visualização de todos os funcionários cadastrados no banco de dados.
+- **Atualização:** Edição de dados específicos (como promoções de cargo ou reajustes salariais).
+- **Remoção:** Exclusão segura de registros do sistema.
+- **Integração:** O backend serve automaticamente os arquivos estáticos do frontend.
+
+## 🛠️ Tecnologias Utilizadas
+
+**Backend:**
+* [Node.js](https://nodejs.org/) - Ambiente de execução
+* [Express.js](https://expressjs.com/) - Framework web para estruturação das rotas da API
+* [MongoDB](https://www.mongodb.com/) - Banco de dados NoSQL (modelagem via Mongoose)
+
+**Frontend:**
+* HTML5 estrutural e semântico
+* CSS3 puro para estilização e responsividade
+* JavaScript (Vanilla) para consumo da API e manipulação do DOM
+
+## 📁 Estrutura do Projeto
+
+```text
 funcionarios-crud/
 ├── backend/
 │   ├── src/
-│   │   └── server.js
-│   ├── .env.example
-│   └── package.json
+│   │   └── server.js      # Ponto de entrada da API e conexão com o banco
+│   ├── .env.example       # Template para variáveis de ambiente
+│   └── package.json       # Dependências e scripts do Node
 ├── frontend/
-│   ├── index.html
-│   ├── app.js
-│   ├── style.css
-│   └── public/
+│   ├── index.html         # Estrutura principal da página
+│   ├── app.js             # Lógica de interface e chamadas HTTP
+│   ├── style.css          # Estilos visuais
+│   └── public/            # Assets estáticos (imagens, ícones)
 └── README.md
-```
-
-## Como rodar
-
-1. Entre na pasta do backend e instale as dependências:
-   ```
-   cd backend
-   npm install
-   ```
-
-2. Copie o arquivo de variáveis de ambiente e ajuste se precisar:
-   ```
-   cp .env.example .env
-   ```
-
-3. Garanta que o MongoDB está rodando (local ou Atlas) e que a `MONGODB_URI` no `.env` aponta para ele.
-
-4. Inicie o servidor:
-   ```
-   npm start
-   ```
-   ou, em modo desenvolvimento com reinício automático:
-   ```
-   npm run dev
-   ```
-
-5. Acesse **http://localhost:8000** no navegador. O backend serve o frontend automaticamente.
-
-## Campos do funcionário
-
-- **nome** (texto, obrigatório)
-- **cargo** (texto, obrigatório)
-- **email** (texto, obrigatório)
-- **salario** (número, obrigatório)
-- **dataAdmissao** (data, obrigatório)
-
-## Rotas da API
-
-| Método | Rota                     | Descrição                     |
-|--------|--------------------------|--------------------------------|
-| GET    | `/api/funcionarios`      | Lista todos os funcionários    |
-| GET    | `/api/funcionarios/:id`  | Busca um funcionário           |
-| POST   | `/api/funcionarios`      | Cria um funcionário            |
-| PUT    | `/api/funcionarios/:id`  | Atualiza um funcionário        |
-| DELETE | `/api/funcionarios/:id`  | Remove um funcionário          |
